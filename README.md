@@ -25,4 +25,17 @@ server.propreties contains the propreties of the server (hence the name). To cha
 - `view-distance` is the server's maximum render distance. Rendering more chunks requires more resources and thus, may cause lag. (Allowed values: Positive integer equal to 5 or greater)
 - `tick-distance` is the server's maximum simulation distance. Simulating more chunks requires more resources and thus, may cause lag. (Allowed values: Integers in the range [4, 12])
 - `player-idle-timeout` is the amount of time (in minutes) a player must be AFK before automaticly being kicked by the server. (Allowed values: Any non-negative integer. If set to "0". the player may AFK indefinitly)
-- 
+- `max-threads` is the maximum number of theads that the server is aloud to use. (Allowed values: Any positive integer. If set to "0", the server will use as many threads as possible)
+- `level-name` is the name of the local savegame stored on the server. This must not change after world creation unless the world directory is edited. (Allowed values: Any string without semicolon symbol or symbols illegal for file name: /\n\r\t\f`?*\\<>|\":)
+- `level-seed` is the seed for the world generator. Changing this after the world is generated may cause world coruption. (Allowed values: Any string)
+- `default-player-permission` is the default permissions for new players. (Allowed values: "visitor", "member", "operator")
+- `texturepack-required` is a boolean that when set to true, can be used to enforce use of "legal" resource packs. If set to false the client may use whatever resource pack they want. (Allowed values: "true" or "false")
+- `content-log-file-enabled` enables logging of content errors to a file on the servers local file system. (Allowed values: "true" or "false")
+- `compression-threshold` determines the smallest size of raw network payload to compress. (Allowed values: 0-65535)
+- `server-authoritative-movement` allows the server to replay any clients' movement and provide corrections before sending movement packets back to other clients. See MOJANG's official documentation for more information on this in-depth subject. (Allowed values: "client-auth", "server-auth", "server-auth-with-rewind")
+- `player-movement-score-threshold` is the number of incongruent time intervals needed before abnormal behavior is reported. Can be disabled by `server-authoritative-movement`.
+- `player-movement-duration-threshold-in-ms` is the duration of time the server and client positions can be out of sync (as defined by player-movement-distance-threshold) before the abnormal movement score is incremented. This value is defined in milliseconds. Can be disabled by `server-authoritative-movement`.
+- `correct-player-movement` will determine the client position will get corrected to the server position if the movement score exceeds the threshold. (Aloud values: "true" or "false")
+- `server-authoritative-block-breaking` determines if the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can. (Aloud values: "true" or "false")
+
+# NOTE THIS DOCUMENTATION IS NOT COMPLETE
