@@ -11,6 +11,15 @@ Please read the `CONTRIBUTING.md` file in the root directory for more informatio
 ## I don't understand this!
 Don't worry! These files do not require that you have any programming experience, they are written in JSON and PLAINTEXT for data storage. Also I'll explain them bellow. (I am assuming you understand how minecraft works for this explanation).
 
+### permissions.json
+
+`permissions.json` contains special permissions for certain players, for example server operators could be defined here using thier Xbox Live accounts' XUID. If this file is blank or unchanged, server operators will be defined with the `/op` and `/deop` command in the server command-line, or operator command line. Account permissions are stored in account objects inside of an array. Each object has two different fields:
+
+- `permission` is the permission level for this account. (Aloud values: "operator", "member", or "visitor")
+- `xuid` is the xuid of the account in which you wish to modify permissions for.
+
+Note that if a player is not objectified in `permissions.json`, that they will have the player permission assigned using the proprety `default-player-permission` in `server.propreties`. Operators can not change a player's permissions using the GUI in game.
+
 ### server.propreties
 `server.propreties` contains the propreties of the server (hence the name). To change the value of a proprety, change the value after the equals sign. For example `server-name=Server-Name` could be changed to `server-name=Different-Server-Name`. Here are all of the propreties and thier meanings bellow. 
 
