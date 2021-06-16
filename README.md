@@ -13,12 +13,12 @@ Don't worry! These files do not require that you have any programming experience
 
 ### permissions.json
 
-`permissions.json` contains special permissions for certain players, for example server operators could be defined here using thier Xbox Live accounts' XUID. If this file is blank or unchanged, server operators will be defined with the `/op` and `/deop` command in the server command-line, or operator command line. Account permissions are stored in account objects inside of an array. Each object has two different fields:
+`permissions.json` contains special permissions for certain players, for example server operators could be defined here using thier Xbox Live accounts' XUID. This is seperate from, and overrides the permissions defined with the `/op` and `/deop` command in the server/client command-lines. Account permissions are stored in account objects inside of an array. Each object has two different fields:
 
 - `permission` is the permission level for this account. (Aloud values: "operator", "member", or "visitor")
-- `xuid` is the xuid of the account in which you wish to modify permissions for.
+- `xuid` is the xuid of the account in which you wish to modify permissions for. (Aloud values: any string)
 
-Note that if a player is not objectified in `permissions.json`, that they will have the player permission assigned using the proprety `default-player-permission` in `server.propreties`. Operators can not change a player's permissions using the GUI in game.
+Note that if a player is not objectified in `permissions.json`, that they will have the player permission referenced the proprety `default-player-permission` in `server.propreties`. Operators can not change a player's permissions using the GUI in game.
 
 ### server.propreties
 `server.propreties` contains the propreties of the server (hence the name). To change the value of a proprety, change the value after the equals sign. For example `server-name=Server-Name` could be changed to `server-name=Different-Server-Name`. Here are all of the propreties and thier meanings bellow. 
