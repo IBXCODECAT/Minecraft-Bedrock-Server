@@ -12,7 +12,7 @@ Please read the `CONTRIBUTING.md` file in the root directory for more informatio
 Don't worry! These files do not require that you have any programming experience, thier just in JSON and PLAINTEXT for data storage. Also I'll explain them bellow. (I am assuming you understand how minecraft works for this explanation).
 
 ### server.propreties
-server.propreties contains the propreties of the server (hence the name). To change the value of a proprety, change the value after the equals sign. For example `server-name=Server-Name` could be changed to `server-name=Different-Server-Name`. Here are all of the propreties and thier meanings bellow. 
+`server.propreties` contains the propreties of the server (hence the name). To change the value of a proprety, change the value after the equals sign. For example `server-name=Server-Name` could be changed to `server-name=Different-Server-Name`. Here are all of the propreties and thier meanings bellow. 
 
 - `server-name` is the name of the server in the servers menu (Allowed values: Any string without semicolon symbol.)
 - `gamemode` is the default gamemode of the server. (Allowed values: "survival", "creative", or "adventure")
