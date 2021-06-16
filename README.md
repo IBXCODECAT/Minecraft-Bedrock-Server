@@ -38,4 +38,13 @@ server.propreties contains the propreties of the server (hence the name). To cha
 - `correct-player-movement` will determine the client position will get corrected to the server position if the movement score exceeds the threshold. (Aloud values: "true" or "false")
 - `server-authoritative-block-breaking` determines if the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can. (Aloud values: "true" or "false")
 
+### whitelist.json
+`whitelist.json` is a JSON file that contains account details of players that are "allowed" to connect to the server. The data is stored as player objects inside of an array. Each player object has three attributes:
+
+- `ignoresPlayerLimit` which determines if this player object should ignore the player cap when connecting to the server. (Aloud values: "true" or "false")
+- `name` which is the Xbox Live gamertag of the player who shall be aloud to connect to the server. (Aloud values: any string)
+- `xuid` which is the Xbox Live account XUID of the player who shall be aloud to connect to the server. (Aloud values: any string)
+
+If a gamertag or XUID, is not found within the whitelist, the acount will not be aloud to connect to the server. Note that the whitelist will only be functional if `online-mode` and `white-list` propreties are set to true in the `server.propreties` file.
+
 # NOTE THIS DOCUMENTATION IS NOT COMPLETE
