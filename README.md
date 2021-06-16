@@ -38,6 +38,17 @@ server.propreties contains the propreties of the server (hence the name). To cha
 - `correct-player-movement` will determine the client position will get corrected to the server position if the movement score exceeds the threshold. (Aloud values: "true" or "false")
 - `server-authoritative-block-breaking` determines if the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can. (Aloud values: "true" or "false")
 
+### valid_known_packs.json
+
+`valid_known_packs.json` is a JSON file that contains all "legal" packs to be used on the server. The data is stored as pack objects inside of an array with the first array item being the format object. The pack object only has one attribute which is the `file_version`. This is set to "2" because of the file-structure MOJANG is using right now. All objects after the format object are pack objects. These have four attributes:
+
+- `file_system` is the filesystem type of the server's local filesystem.
+- `path` is the additive path of the resource or behaviour pack relation to the `bedrock_server.exe` file.
+- `uuid` is the universally-unique identifier of the resource or behaviour pack. This is used for duplicate and overide checks.
+- `version` is the minimum supported minecraft version for the pack. For example a pack designed for 1.12 will run in 1.17, but not 1.9.
+
+Behavour packs are always enabled for everyone, but resource pack application is optional for each client. If you want all clients to use the same texture-packs and disable thier own, the `texturepack-required` proprety in `server.propreties` must be set to "true" for all clients to see these textures. If a pack is not defined correctly, it will be interpereted as the vanilla resources and behaviours.
+
 ### whitelist.json
 `whitelist.json` is a JSON file that contains account details of players that are "allowed" to connect to the server. The data is stored as player objects inside of an array. Each player object has three attributes:
 
