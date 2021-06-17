@@ -1,5 +1,5 @@
 ## What is this repository?
-This repository contains config files from a private Minecraft C++ (MCPE) server. If you are a member of this server feel free to contribute to this repository.
+This repository contains automation and configuration files from a private Minecraft C++ (MCPE) server. If you are a member of this server feel free to contribute to this repository.
 
 ---
 
