@@ -1,8 +1,4 @@
-cd %~dp0src
-start bedrock_server.exe
-
 cd %~dp0
+start server.lnk
 start AutoBackupElevated.lnk
-
-cd %~dp0
-start AutoConnect.bat
+start AutoConnectMinimized.lnk

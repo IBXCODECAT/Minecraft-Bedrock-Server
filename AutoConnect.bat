@@ -9,6 +9,8 @@ set /A prevConnection=1
 
 :check-connection
 
+cls
+
 echo checking internet connection
 ping www.google.nl -n 1 -w 1000
 
@@ -26,5 +28,5 @@ if errorlevel 1 (
     )
 )
 
-timeout /t 5 /nobreak
+timeout /t 60 /nobreak
 goto check-connection
