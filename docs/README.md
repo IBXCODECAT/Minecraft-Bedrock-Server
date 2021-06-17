@@ -3,11 +3,6 @@ This repository contains config files from a private Minecraft C++ (MCPE) server
 
 ---
 
-## How do I contribute
-Please read the `CONTRIBUTING.md` file in the root directory for more information reguarding this.
-
----
-
 ## I don't understand this!
 Don't worry! These files do not require that you have any programming experience, they are written in JSON and PLAINTEXT for data storage. Also I'll explain them bellow. (I am assuming you understand how minecraft works for this explanation).
 
