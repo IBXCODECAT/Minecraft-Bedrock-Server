@@ -3,8 +3,17 @@ This repository contains automation and configuration files from a private Minec
 
 ---
 
-## I don't understand this!
-Don't worry! These files do not require that you have any programming experience, they are written in JSON and PLAINTEXT for data storage. Also I'll explain them bellow. (I am assuming you understand how minecraft works for this explanation).
+### AutoBackup.bat
+
+`AutoBackup.bat` backs up the server world and configuration files every twenty-four hours to a backups directory on the server's local file system. If the backups directory was not found, it will make one.
+
+### AutoBackupElevated.lnk
+
+`AutoBackupElevated.lnk` is a shortcut to `AutoBackup.bat` which has grants elevated program privladges.
+
+### AutoConnect.bat
+
+`AutoConnect.bat` verifies and internet connection. If the internet has disconnected, the file will kill `bedrock_server.exe` and relaunch the executable when an internet signal is regained. There is a thirty second delay in between connection checks.
 
 ### permissions.json
 
@@ -42,6 +51,10 @@ Note that if a player is not objectified in `permissions.json`, that they will h
 - `correct-player-movement` will determine the client position will get corrected to the server position if the movement score exceeds the threshold. (Aloud values: "true" or "false")
 - `server-authoritative-block-breaking` determines if the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can. (Aloud values: "true" or "false")
 
+### start.bat
+
+`start.bat` is responsable for starting all required batch files as well as the server's main executable. This file is automaticly launched when windows starts up because it is referenced by a lnk shortcut in the `shell:startup` file location. This file will launch `AutoBackupElevated.bat`, `AutoConnect.bat`, and `bedrock_server.exe`. This file will howerver not be run by `AutoConnect.bat` to prevent an infinite call loop. All batch files are able to run offline, so there doesn't have to be an internet connection for this operation to complete.
+
 ### valid_known_packs.json
 
 `valid_known_packs.json` is a JSON file that contains all "legal" packs to be used on the server. The data is stored as pack objects inside of an array with the first array item being the format object. The pack object only has one attribute which is the `file_version`. This is set to "2" because of the file-structure MOJANG is using right now. All objects after the format object are pack objects. These have four attributes:
@@ -61,5 +74,3 @@ Behavour packs are always enabled for everyone, but resource pack application is
 - `xuid` which is the Xbox Live account XUID of the player who shall be aloud to connect to the server. (Aloud values: any string)
 
 If a gamertag or XUID, is not found within the whitelist, the acount will not be aloud to connect to the server. Note that the whitelist will only be functional if `online-mode` and `white-list` propreties are set to true in the `server.propreties` file.
-
-# NOTE THIS DOCUMENTATION IS NOT COMPLETE
