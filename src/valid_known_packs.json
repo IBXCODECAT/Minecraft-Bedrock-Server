@@ -21,6 +21,20 @@
 	
 	{
 		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.16.220",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.16.220"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "resource_packs/IBX-MC-Extension",
+		"uuid" : "e24922c8-4b4e-434b-9582-d5ff41d07001",
+		"version" : "1.2.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
 		"path" : "behavior_packs/vanilla",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
 		"version" : "0.0.1"
@@ -49,16 +63,16 @@
 	
 	{
 		"file_system" : "RawPath",
-		"path" : "behavior_packs/vanilla_1.14",
+		"path" : "behavior_packs/vanilla_1.16.200",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
-		"version" : "1.14.0"
+		"version" : "1.16.200"
 	},
 	
 	{
 		"file_system" : "RawPath",
-		"path" : "behavior_packs/vanilla_1.16.200",
+		"path" : "behavior_packs/vanilla_1.14",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
-		"version" : "1.16.200"
+		"version" : "1.14.0"
 	},
 	
 	{
@@ -73,13 +87,6 @@
 		"path" : "behavior_packs/vanilla_1.16",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
 		"version" : "1.16.0"
-	},
-	
-	{
-		"file_system" : "RawPath",
-		"path" : "behavior_packs/vanilla_1.16.220",
-		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
-		"version" : "1.16.220"
 	},
 	
 	{
